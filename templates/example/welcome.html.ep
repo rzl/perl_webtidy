@@ -7,3 +7,6 @@ and the layout "templates/layouts/default.html.ep",
 <%= link_to 'here' => '/index.html' %> to move forward to a static page. To
 learn more, you can also browse through the documentation
 <%= link_to 'here' => '/perldoc' %>.
+<br>
+<h1>
+<%= link_to 'click here to use perl_webtidy' => '/changes' %>.

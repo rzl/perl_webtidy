@@ -1,0 +1,39 @@
+% layout 'default';
+% title 'Welcome';
+
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="col-md-12">
+	
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="col-md-6">
+		    <form name="form1" action="changes" method="post" class="add-entry">
+			<div style="text-align:right;">
+			<input id="post_code" class="btn" type="submit" value="把你的代码粘贴到下面的输入框，点击我将代码转换成亮丽的PERL代码">
+			</div>
+			<textarea name="text" wrap="off" style='overflow:scroll;overflow-y:hidden;' class="form-control" rows="30" onfocus="window.activeobj=this;this.clock=setInterval(function(){activeobj.style.height=(activeobj.scrollHeight+15)+'px';},200);" onblur="clearInterval(this.clock);activeobj.style.height=(activeobj.scrollHeight+15)+'px';"><%= $msg->user_post %></textarea>
+		    </form>
+		</div>
+		<div class="col-md-6">
+			<input  class="btn" type="submit" value="使用PERL TIDY的效果">
+			<pre><code class="Perl"><%= $msg->dest_string %></code></pre>
+			<div class="alert alert-warning">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			<%= $msg->stderr_string %>
+			</div>
+			<div class="alert alert-warning">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			<%= $msg->errorfile_string %>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+
+

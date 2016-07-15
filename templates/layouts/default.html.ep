@@ -1,5 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head><title><%= title %></title></head>
+  <head>
+  <title><%= title %></title>
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/headroom.js"></script>
+  <link rel="stylesheet" href="./styles/default.css">
+  <script src="./highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+<header id="header" role="navigation" class="navbar navbar-default navbar-fixed-bottom">
+<div id="haeader">
+<div id="headertext">
+	<div class="row-fluid">
+		<div class="col-md-6">
+					<div style="text-align:right;">
+			<input class="btn" type="submit" value="点击我将代码转换成亮丽的PERL代码" onclick="$(post_code).click()">
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div style="text-align:left;">
+			<input  class="btn" type="submit" value="使用PERL TIDY的效果">
+			</div>
+		</div>
+	</div>
+
+
+</div>
+</header>
   <body><%= content %></body>
+  <div id="header" role="navigation" class="navbar navbar-default"></div>
 </html>

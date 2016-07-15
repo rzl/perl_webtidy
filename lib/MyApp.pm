@@ -1,18 +1,22 @@
 package MyApp;
 use Mojo::Base 'Mojolicious';
+use MyApp::Model::Pltidy;
 
 # This method will run once at server start
 sub startup {
-  my $self = shift;
-
+  my $app = shift;
+  $app->helper(pltidy => sub { state $pltidy = MyApp::Model::Pltidy->new });
   # Documentation browser under "/perldoc"
-  $self->plugin('PODRenderer');
+  $app->plugin('PODRenderer');
 
   # Router
-  my $r = $self->routes;
+  my $r = $app->routes;
 
   # Normal route to controller
-  $r->get('/')->to('example#welcome');
+  $r->any('/changes')->to('example#changes');
+  
+  $r->get('/*')->to('example#welcome');
+  
 }
 
 1;
